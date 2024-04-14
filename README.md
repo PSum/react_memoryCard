@@ -4,7 +4,7 @@
    - div name (links)
    - div score (rechts)
  
- -main
+ - main
    - 10 Bilder
       - Bild
       - text
