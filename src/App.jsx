@@ -15,14 +15,14 @@ function Header(score, bestScore) {
   );
 }
 
-/* This doesent work yet */
+/* This doesent work yet t push*/
 function MemoryPage() {
   const cards = [1, 2, 3, 4, 5, 6];
   return (
     <>
   cards.map((card) => {
     // console.log({ card })
-    <div>test</div>
+    // <div>test</div>
   });
 </>
   )
