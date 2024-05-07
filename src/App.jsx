@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import {v4 as uuidv4} from  'uuid';
 
-const playingCards = [1, 2, 3, 4, 5, 6];
 
 function Header(score, bestScore) {
   return (
@@ -15,24 +15,21 @@ function Header(score, bestScore) {
   );
 }
 
-/* This doesent work yet t push*/
-function MemoryPage() {
-  const cards = [1, 2, 3, 4, 5, 6];
-  return (
-    <>
-  cards.map((card) => {
-    // console.log({ card })
-    // <div>test</div>
-  });
-</>
-  )
+function PictureFrame({cards}) {
+  const listItems = cards.map(card => <div key={uuidv4()}>{card}</div>)
+  return (<div>{listItems}</div>)
 }
 
 function App() {
+const [cards, setCards] = useState([1, 2, 3, 4, 5, 6]);
+function test (){
+  console.log("test");
+}
   return (
     <>
       <Header />
-      <MemoryPage />
+      <PictureFrame cards={cards} />
+      <button onClick={test}>Test button</button>
     </>
   );
 }
