@@ -1,35 +1,26 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Header from './Header.jsx'
 import {v4 as uuidv4} from  'uuid';
 
-
-function Header(score, bestScore) {
-  return (
-    <>
-      <h1>Memory Game</h1>
-      <div>
-        <div>Score: </div>
-        <div>Best score: </div>
-      </div>
-    </>
-  );
-}
+const cards = [1, 2, 3, 4, 5, 6];
 
 function PictureFrame({cards}) {
+
   const listItems = cards.map(card => <div key={uuidv4()}>{card}</div>)
   return (<div>{listItems}</div>)
 }
 
 function App() {
-const [cards, setCards] = useState([1, 2, 3, 4, 5, 6]);
-function test (){
-  console.log("test");
+const [score, setScore] = useState(0)
+function handleScore(){
+  setScore(score + 1);
 }
   return (
     <>
-      <Header />
+      <Header score={score} />
       <PictureFrame cards={cards} />
-      <button onClick={test}>Test button</button>
+      <button onClick={handleScore}>Add to Score test</button>
     </>
   );
 }
